@@ -1,0 +1,5 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+toilet -f big "ZANGI ULTRA" | lolcat
+echo "White-Hat Cyber Security Framework Loaded" | lolcat
+echo ""
