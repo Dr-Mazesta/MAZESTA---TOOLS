@@ -1,0 +1,19 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+# === Alias Pack for White-Hat Pentesting ===
+
+alias update="pkg update -y"
+alias upgrade="pkg upgrade -y"
+alias install="pkg install -y"
+alias search="pkg search"
+alias clean="pkg autoclean"
+
+alias scan="nmap -A"
+alias port="nmap -p-"
+alias ipinfo="curl ifconfig.me"
+alias myip="curl ifconfig.me"
+
+alias sys="neofetch"
+alias speed="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python"
+
+alias panel="bash ~/zangi-panel.sh"
