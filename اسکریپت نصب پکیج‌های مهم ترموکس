@@ -1,0 +1,20 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+# === Termux Base Packages Installer ===
+# This script installs all the basic and essential packages needed for Termux.
+
+pkg update -y
+pkg upgrade -y
+
+pkg install -y \
+  git wget curl nano zsh neofetch htop tree proot openssh openssl \
+  python python-pip ruby php mariadb tmux unzip zip tar \
+  nmap rust golang clang make cmake autoconf automake
+
+# tools for decoration
+pkg install -y toilet figlet cowsay
+
+# lolcat needs ruby installation
+gem install lolcat
+
+echo "[✔] All packages installed successfully!"
