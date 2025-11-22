@@ -1,0 +1,28 @@
+#!/data/data/com.termux/files/usr/bin/bash
+
+while true; do
+  clear
+  echo "=== ZANGI ULTRA HACKER PANEL ===" | lolcat
+  echo "
+  [1] System Info
+  [2] Speed Test
+  [3] Full Update
+  [4] Network Scan
+  [5] Open SSH Server
+  [6] Exit
+  "
+
+  read -p "Choose: " choice
+
+  case $choice in
+    1) neofetch;;
+    2) speed;;
+    3) update && upgrade;;
+    4) read -p 'Target: ' x; nmap -A $x;;
+    5) sshd;;
+    6) exit 0;;
+    *) echo "Invalid!" ;;
+  esac
+
+  read -p "Press enter..."
+done
