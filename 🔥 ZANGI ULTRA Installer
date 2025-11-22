@@ -1,0 +1,38 @@
+#!/data/data/com.termux/files/usr/bin/bash
+# === ZANGI ULTRA INSTALLER ===
+
+echo "[⚡] Installing ZSH + Powerlevel10k theme..."
+
+pkg install -y zsh git wget
+
+# install p10k
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git \
+  $HOME/powerlevel10k
+
+# fonts for Termux
+mkdir -p ~/.fonts
+wget https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf -O ~/.fonts/PowerlineSymbols.otf
+
+fc-cache -f -v
+
+# set zsh as default shell
+chsh -s zsh
+
+# copy template .zshrc
+cat > ~/.zshrc <<EOF
+# === ZANGI ULTRA ZSH CONFIG ===
+
+export PATH=\$PREFIX/bin:\$PATH
+
+# POWERLEVEL10K
+source ~/powerlevel10k/powerlevel10k.zsh-theme
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Load Aliases
+source ~/zangi-alias.sh
+
+# Load Banner
+bash ~/zangi-banner.sh
+EOF
+
+echo "[✔] ZANGI ULTRA installed! Restart Termux."
